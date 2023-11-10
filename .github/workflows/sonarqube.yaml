@@ -24,11 +24,6 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
 
-      - name: Build Project
-        run: |
-          # Assuming your project uses Maven for building
-          mvn clean install
-
       - name: Analyze with SonarQube
         uses: SonarSource/sonarqube-scan-action@7295e71c9583053f5bf40e9d4068a0c974603ec8
         env:
