@@ -16,8 +16,10 @@ jobs:
         version: '11'
         architecture: x64
         targets: 'JAVA_HOME'
+    - name: Change directory
+      run:  cd ./server/server 
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+      run: chmod +x gradlew    
     - name: Build with Gradle
       run: ./gradlew build
     - name: Upload build artifact
