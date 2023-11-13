@@ -24,6 +24,9 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
 
+      - name: Build with Maven
+        run: mvn clean install
+
       - name: Analyze with SonarQube
         uses: SonarSource/sonarqube-scan-action@7295e71c9583053f5bf40e9d4068a0c974603ec8
         env:
@@ -31,5 +34,4 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
-          args:
-            -Dsonar.projectKey=spring5-web-example
+          args: -Dsonar.projectKey=spring5-web-example
