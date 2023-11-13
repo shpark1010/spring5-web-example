@@ -33,4 +33,3 @@ jobs:
         with:
           args:
             -Dsonar.projectKey=spring5-web-example
-            -Dsonar.sources=src/main/java/hello/
