@@ -1,0 +1,41 @@
+sonar.jdbc.username=bn_sonarqube
+sonar.jdbc.password=gPf9mMl3DH
+
+
+mysql -ubn_sonarqube -p -D bitnami_sonarqube
+
+psql -U bn_sonarqub -W
+
+gPf9mMl3DH
+
+NAME: bitnami
+LAST DEPLOYED: Wed Dec  6 16:40:09 2023
+NAMESPACE: sonarqube
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+** Please be patient while the chart is being deployed **
+
+Your SonarQube(TM) site can be accessed through the following DNS name from within your cluster:
+
+    bitnami-sonarqube.sonarqube.svc.cluster.local (port 80)
+
+To access your SonarQube(TM) site from outside the cluster follow the steps below:
+
+1. Get the SonarQube(TM) URL by running these commands:
+
+  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+        Watch the status with: 'kubectl get svc --namespace sonarqube -w bitnami-sonarqube'
+
+   export SERVICE_IP=$(kubectl get svc --namespace sonarqube bitnami-sonarqube --template "{{ range (index .status.loadBalancer.ingress 0) }}{{ . }}{{ end }}")
+   echo "SonarQube(TM) URL: http://$SERVICE_IP/"
+
+2. Open a browser and access SonarQube(TM) using the obtained URL.
+
+3. Login with the following credentials below:
+
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace sonarqube bitnami-sonarqube -o jsonpath="{.data.sonarqube-password}" | base64 -d)
+
+UlnEkpuPXO
